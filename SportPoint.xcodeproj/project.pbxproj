@@ -37,6 +37,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AAA789129B735E000BD50E0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7AAA789929B7367500BD50E0 /* !Common */,
+				7AAA789A29B7368100BD50E0 /* Init */,
+				7AAA789B29B7369500BD50E0 /* Map */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7AAA789229B735ED00BD50E0 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		7AAA789329B735FE00BD50E0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7AAA789429B7360400BD50E0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7AAA789529B7362000BD50E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7AAA789629B7362700BD50E0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7AAA789729B7363100BD50E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7AAA789829B7364600BD50E0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7AAA789929B7367500BD50E0 /* !Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "!Common";
+			sourceTree = "<group>";
+		};
+		7AAA789A29B7368100BD50E0 /* Init */ = {
+			isa = PBXGroup;
+			children = (
+				7AAED1E629B6739F0090F534 /* ViewController.swift */,
+			);
+			path = Init;
+			sourceTree = "<group>";
+		};
+		7AAA789B29B7369500BD50E0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		7AAED1D629B6739F0090F534 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +137,16 @@
 		7AAED1E129B6739F0090F534 /* SportPoint */ = {
 			isa = PBXGroup;
 			children = (
+				7AAA789129B735E000BD50E0 /* Controllers */,
+				7AAA789229B735ED00BD50E0 /* Enums */,
+				7AAA789329B735FE00BD50E0 /* Extensions */,
+				7AAA789429B7360400BD50E0 /* Helpers */,
+				7AAA789529B7362000BD50E0 /* Models */,
+				7AAA789629B7362700BD50E0 /* Protocols */,
+				7AAA789729B7363100BD50E0 /* Resources */,
+				7AAA789829B7364600BD50E0 /* Services */,
 				7AAED1E229B6739F0090F534 /* AppDelegate.swift */,
 				7AAED1E429B6739F0090F534 /* SceneDelegate.swift */,
-				7AAED1E629B6739F0090F534 /* ViewController.swift */,
 				7AAED1E829B6739F0090F534 /* Main.storyboard */,
 				7AAED1EB29B673A00090F534 /* Assets.xcassets */,
 				7AAED1ED29B673A00090F534 /* LaunchScreen.storyboard */,

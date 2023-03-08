@@ -13,6 +13,7 @@ final class MapViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var searchTextField: CustomTextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Private Properties
@@ -36,6 +37,32 @@ final class MapViewController: UIViewController {
     private func setupView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        let leftView = UIImageView(image: UIImage(systemName: "magnifyingglass"))
+        leftView.tintColor = .systemGray
+        
+        let rightView = UIButton()
+        rightView.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+        rightView.tintColor = .systemGray
+        
+        searchTextField.leftView = leftView
+        searchTextField.leftViewMode = .always
+        
+        searchTextField.rightView = rightView
+        searchTextField.rightViewMode = .always
+        
+        searchTextField.borderStyle = .none
+        searchTextField.backgroundColor = .white
+        searchTextField.keyboardType = .default
+        searchTextField.autocapitalizationType = .none
+        searchTextField.autocorrectionType = .no
+        searchTextField.spellCheckingType = .no
+        searchTextField.returnKeyType = .done
+        
+        searchTextField.corneredRadius(radius: 20)
+        searchTextField.addShadow(color: .black,
+                                  radius: 6,
+                                  offset: CGSize(width: 0, height: 3))
     }
     
 }

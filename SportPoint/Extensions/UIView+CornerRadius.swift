@@ -21,6 +21,7 @@ extension UIView {
                         borderColor: UIColor? = nil) {
         
         layer.cornerRadius = radius == nil ? bounds.height / 2 : radius!
+        layer.cornerCurve = .continuous
         clipsToBounds = true
         
         if let corners = corners {

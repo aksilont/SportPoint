@@ -20,7 +20,9 @@ extension UIView {
                    radius: CGFloat = 0,
                    offset: CGSize = .zero) {
         
-        guard let rootView = superview else { return }
+        guard let rootView = superview,
+              let currentIndex = rootView.subviews.firstIndex(of: self)
+        else { return }
         
         let backView = UIView(frame: frame)
         backView.backgroundColor = .white
@@ -34,7 +36,7 @@ extension UIView {
         backView.layer.shadowOffset = offset
         backView.layer.shadowRadius = radius
         
-        rootView.insertSubview(backView, at: 0)
+        rootView.insertSubview(backView, at: currentIndex)
     }
     
 }

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -69,11 +70,41 @@
             </objects>
             <point key="canvasLocation" x="17.557251908396946" y="24.647887323943664"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Ng0-xS-W01">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="sed-pQ-Wdk" customClass="MapViewController" customModule="SportPoint" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c97-2v-WHN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcF-Hw-EMD">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zxL-Wk-aJG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HcF-Hw-EMD" firstAttribute="top" secondItem="c97-2v-WHN" secondAttribute="top" id="iuK-NF-6xh"/>
+                            <constraint firstItem="HcF-Hw-EMD" firstAttribute="leading" secondItem="zxL-Wk-aJG" secondAttribute="leading" id="mHd-Pr-AuL"/>
+                            <constraint firstAttribute="bottom" secondItem="HcF-Hw-EMD" secondAttribute="bottom" id="x19-ik-Dpe"/>
+                            <constraint firstItem="zxL-Wk-aJG" firstAttribute="trailing" secondItem="HcF-Hw-EMD" secondAttribute="trailing" id="xBc-w1-CyY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="HcF-Hw-EMD" id="IBM-ba-6od"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Lc-ev-tkU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="869.46564885496184" y="24.647887323943664"/>
+        </scene>
     </scenes>
     <resources>
         <image name="WelcomeScreen" width="375" height="812"/>
         <namedColor name="TitleOnWhiteButton">
-            <color red="0.29411764705882354" green="0.65098039215686276" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.29399999976158142" green="0.65100002288818359" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

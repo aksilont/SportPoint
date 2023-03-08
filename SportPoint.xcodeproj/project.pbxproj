@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A78251729B759C6007DCE8E /* UIView+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78251629B759C6007DCE8E /* UIView+cornerRadius.swift */; };
-		7A78251B29B75B4C007DCE8E /* UIView+addShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78251A29B75B4C007DCE8E /* UIView+addShadow.swift */; };
+		7A44768929B873EC00209F36 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44768829B873EC00209F36 /* Coordinator.swift */; };
+		7A44768B29B8747C00209F36 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44768A29B8747C00209F36 /* MapViewController.swift */; };
+		7A44768D29B874C600209F36 /* UIViewController+GetFromStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44768C29B874C600209F36 /* UIViewController+GetFromStoryboard.swift */; };
+		7A78251729B759C6007DCE8E /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78251629B759C6007DCE8E /* UIView+CornerRadius.swift */; };
+		7A78251B29B75B4C007DCE8E /* UIView+AddShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78251A29B75B4C007DCE8E /* UIView+AddShadow.swift */; };
 		7AAED1E329B6739F0090F534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAED1E229B6739F0090F534 /* AppDelegate.swift */; };
 		7AAED1E529B6739F0090F534 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAED1E429B6739F0090F534 /* SceneDelegate.swift */; };
 		7AAED1E729B6739F0090F534 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAED1E629B6739F0090F534 /* WelcomeViewController.swift */; };
@@ -18,8 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7A78251629B759C6007DCE8E /* UIView+cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+cornerRadius.swift"; sourceTree = "<group>"; };
-		7A78251A29B75B4C007DCE8E /* UIView+addShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addShadow.swift"; sourceTree = "<group>"; };
+		7A44768829B873EC00209F36 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7A44768A29B8747C00209F36 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7A44768C29B874C600209F36 /* UIViewController+GetFromStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+GetFromStoryboard.swift"; sourceTree = "<group>"; };
+		7A78251629B759C6007DCE8E /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
+		7A78251A29B75B4C007DCE8E /* UIView+AddShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddShadow.swift"; sourceTree = "<group>"; };
 		7AAED1DF29B6739F0090F534 /* SportPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AAED1E229B6739F0090F534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AAED1E429B6739F0090F534 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,8 +67,9 @@
 		7AAA789329B735FE00BD50E0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7A78251629B759C6007DCE8E /* UIView+cornerRadius.swift */,
-				7A78251A29B75B4C007DCE8E /* UIView+addShadow.swift */,
+				7A78251629B759C6007DCE8E /* UIView+CornerRadius.swift */,
+				7A78251A29B75B4C007DCE8E /* UIView+AddShadow.swift */,
+				7A44768C29B874C600209F36 /* UIViewController+GetFromStoryboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 		7AAA789929B7367500BD50E0 /* !Common */ = {
 			isa = PBXGroup;
 			children = (
+				7A44768829B873EC00209F36 /* Coordinator.swift */,
 			);
 			path = "!Common";
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 		7AAA789B29B7369500BD50E0 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				7A44768A29B8747C00209F36 /* MapViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -232,11 +241,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A44768D29B874C600209F36 /* UIViewController+GetFromStoryboard.swift in Sources */,
 				7AAED1E729B6739F0090F534 /* WelcomeViewController.swift in Sources */,
-				7A78251729B759C6007DCE8E /* UIView+cornerRadius.swift in Sources */,
+				7A78251729B759C6007DCE8E /* UIView+CornerRadius.swift in Sources */,
+				7A44768929B873EC00209F36 /* Coordinator.swift in Sources */,
 				7AAED1E329B6739F0090F534 /* AppDelegate.swift in Sources */,
 				7AAED1E529B6739F0090F534 /* SceneDelegate.swift in Sources */,
-				7A78251B29B75B4C007DCE8E /* UIView+addShadow.swift in Sources */,
+				7A78251B29B75B4C007DCE8E /* UIView+AddShadow.swift in Sources */,
+				7A44768B29B8747C00209F36 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

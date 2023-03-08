@@ -1,5 +1,5 @@
 //
-//  UIView+addShadow.swift
+//  UIView+AddShadow.swift
 //  SportPoint
 //
 //  Created by Aksilont on 07.03.2023.

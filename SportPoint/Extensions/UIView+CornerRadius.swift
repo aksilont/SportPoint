@@ -1,5 +1,5 @@
 //
-//  UIView+cornerRadius.swift
+//  UIView+CornerRadius.swift
 //  SportPoint
 //
 //  Created by Aksilont on 07.03.2023.

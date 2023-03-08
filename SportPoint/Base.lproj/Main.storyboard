@@ -8,6 +8,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -82,17 +83,74 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ivt-KI-qvH">
+                                <rect key="frame" x="15" y="61" width="363" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Yek-19-kfy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tsD-eg-BXo">
+                                <rect key="frame" x="0.0" y="111" width="393" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vH4-U3-vx6"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ba9-Gu-lAJ">
+                                    <size key="itemSize" width="90" height="30"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="TypePointCell" id="l1p-92-581" customClass="TypePointCollectionViewCell" customModule="SportPoint" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="0.0" width="51.666666666666657" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nMj-IZ-Awx">
+                                            <rect key="frame" x="0.0" y="0.0" width="51.666666666666657" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0Q-My-EUr">
+                                                    <rect key="frame" x="10.000000000000002" y="4" width="31.666666666666671" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="b0Q-My-EUr" firstAttribute="leading" secondItem="nMj-IZ-Awx" secondAttribute="leading" constant="10" id="AbN-U5-SuT"/>
+                                                <constraint firstAttribute="trailing" secondItem="b0Q-My-EUr" secondAttribute="trailing" constant="10" id="MPZ-Z3-XfB"/>
+                                                <constraint firstAttribute="height" constant="30" id="XG4-vb-8HC"/>
+                                                <constraint firstItem="b0Q-My-EUr" firstAttribute="top" secondItem="nMj-IZ-Awx" secondAttribute="top" constant="4" id="fr6-Va-R6s"/>
+                                                <constraint firstAttribute="bottom" secondItem="b0Q-My-EUr" secondAttribute="bottom" constant="4" id="rZ4-yK-F5p"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="typeLabel" destination="b0Q-My-EUr" id="5Us-Hj-IVM"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zxL-Wk-aJG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ivt-KI-qvH" firstAttribute="leading" secondItem="zxL-Wk-aJG" secondAttribute="leading" constant="15" id="2TD-Ss-cc4"/>
+                            <constraint firstItem="zxL-Wk-aJG" firstAttribute="trailing" secondItem="tsD-eg-BXo" secondAttribute="trailing" id="77O-DF-gaI"/>
+                            <constraint firstItem="tsD-eg-BXo" firstAttribute="leading" secondItem="zxL-Wk-aJG" secondAttribute="leading" id="Jlx-pq-TSA"/>
+                            <constraint firstItem="ivt-KI-qvH" firstAttribute="top" secondItem="c97-2v-WHN" secondAttribute="top" constant="61" id="Q8a-bF-NnD"/>
+                            <constraint firstItem="zxL-Wk-aJG" firstAttribute="trailing" secondItem="ivt-KI-qvH" secondAttribute="trailing" constant="15" id="ihD-vC-Zux"/>
                             <constraint firstItem="HcF-Hw-EMD" firstAttribute="top" secondItem="c97-2v-WHN" secondAttribute="top" id="iuK-NF-6xh"/>
                             <constraint firstItem="HcF-Hw-EMD" firstAttribute="leading" secondItem="zxL-Wk-aJG" secondAttribute="leading" id="mHd-Pr-AuL"/>
+                            <constraint firstItem="tsD-eg-BXo" firstAttribute="top" secondItem="ivt-KI-qvH" secondAttribute="bottom" constant="10" id="twm-8b-cQY"/>
                             <constraint firstAttribute="bottom" secondItem="HcF-Hw-EMD" secondAttribute="bottom" id="x19-ik-Dpe"/>
                             <constraint firstItem="zxL-Wk-aJG" firstAttribute="trailing" secondItem="HcF-Hw-EMD" secondAttribute="trailing" id="xBc-w1-CyY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="tsD-eg-BXo" id="znT-LP-Qje"/>
                         <outlet property="mapView" destination="HcF-Hw-EMD" id="IBM-ba-6od"/>
                     </connections>
                 </viewController>

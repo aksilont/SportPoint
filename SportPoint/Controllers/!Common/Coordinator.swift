@@ -19,7 +19,7 @@ final class Coordinator {
         
         if useNavigationController {
             let navigationVC = UINavigationController(rootViewController: destination)
-            navigationVC.navigationBar.prefersLargeTitles = true
+            navigationVC.isNavigationBarHidden = true
             window.rootViewController = navigationVC
         } else {
             window.rootViewController = destination

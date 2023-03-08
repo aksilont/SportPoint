@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var continueButton: UIButton! {
         didSet {
@@ -30,6 +30,6 @@ private extension WelcomeViewController {
     
     @objc private func continueButtonDidTap(_ sender: UIButton) {
         let nextVC = UIViewController.getFromStoryboard("Main", withIdentifier: "MapViewController")
-        Coordinator.shared.goTo(nextVC)
+        Coordinator.shared.goTo(nextVC, useNavigationController: true)
     }
 }

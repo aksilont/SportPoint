@@ -20,6 +20,8 @@
 		7AAED1EA29B6739F0090F534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AAED1E829B6739F0090F534 /* Main.storyboard */; };
 		7AAED1EC29B673A00090F534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AAED1EB29B673A00090F534 /* Assets.xcassets */; };
 		7AAED1EF29B673A00090F534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AAED1ED29B673A00090F534 /* LaunchScreen.storyboard */; };
+		7AB03E8229B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8129B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift */; };
+		7AB03E8429B8F6BF00EF8BE1 /* TypeOfSportPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8329B8F6BF00EF8BE1 /* TypeOfSportPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		7AAED1EB29B673A00090F534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AAED1EE29B673A00090F534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AAED1F029B673A00090F534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AB03E8129B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePointCollectionViewCell.swift; sourceTree = "<group>"; };
+		7AB03E8329B8F6BF00EF8BE1 /* TypeOfSportPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfSportPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		7AAA789229B735ED00BD50E0 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				7AB03E8329B8F6BF00EF8BE1 /* TypeOfSportPoint.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				7A44768A29B8747C00209F36 /* MapViewController.swift */,
+				7AB03E8129B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -257,6 +263,8 @@
 				7A78251B29B75B4C007DCE8E /* UIView+AddShadow.swift in Sources */,
 				7A44768B29B8747C00209F36 /* MapViewController.swift in Sources */,
 				7A0785E129B88DD9002FD05F /* LocationManager.swift in Sources */,
+				7AB03E8429B8F6BF00EF8BE1 /* TypeOfSportPoint.swift in Sources */,
+				7AB03E8229B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

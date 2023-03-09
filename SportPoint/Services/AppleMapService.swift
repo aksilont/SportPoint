@@ -37,14 +37,18 @@ final class AppleMapService: NSObject {
         locationManager = LocationManager(delegate: self)
     }
     
-    // MARK: - Configure
+    // MARK: - Configure Map
     
     func configureMap() {
         mapView.delegate = self
         mapView.showsUserLocation = true
     }
     
+    // MARK: - Methods
+    
     func setupPoints(points: [Point]) {
+        removeAllAnnotations()
+        
         var annotations: [PointAnnotation] = []
         
         for point in points {
@@ -52,12 +56,11 @@ final class AppleMapService: NSObject {
             annotations.append(annotation)
         }
         mapView.showAnnotations(annotations, animated: true)
-        
-        var region = mapView.region
-        region.span.latitudeDelta *= 1.5
-        region.span.longitudeDelta *= 1.5
-        lastRegion = region
-        mapView.setRegion(lastRegion, animated: true)
+    }
+    
+    private func removeAllAnnotations() {
+        let allAnnotations = mapView.annotations
+        mapView.removeAnnotations(allAnnotations)
     }
     
     // MARK: - Camera
@@ -144,7 +147,7 @@ extension AppleMapService: MKMapViewDelegate {
 
 // MARK: - LocationManagerProtocol
 
-extension AppleMapService: LocationManagerProtocol {
+extension AppleMapService: LocationManagerDelegate {
     func showAlert(title: String, message: String) {
         delegate?.showAlertMapService(title: title, message: message)
     }

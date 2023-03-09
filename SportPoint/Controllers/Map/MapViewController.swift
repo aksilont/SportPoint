@@ -23,7 +23,11 @@ final class MapViewController: UIViewController {
     private var dataPoints: [Point] = [] {
         didSet { filteredDataPoints = dataPoints }
     }
-    private var filteredDataPoints: [Point] = []
+    private var filteredDataPoints: [Point] = [] {
+        didSet {
+            mapService.setupPoints(points: filteredDataPoints)
+        }
+    }
     
     private var mapService: AppleMapService!
     
@@ -45,6 +49,9 @@ final class MapViewController: UIViewController {
     }
     
     private func setupView() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
+        mapView.addGestureRecognizer(gesture)
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -54,6 +61,9 @@ final class MapViewController: UIViewController {
         let rightView = UIButton()
         rightView.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
         rightView.tintColor = .systemGray
+        rightView.addTarget(self, action: #selector(clearButtonDidTap), for: .touchUpInside)
+        
+        searchTextField.delegate = self
         
         searchTextField.leftView = leftView
         searchTextField.leftViewMode = .always
@@ -80,11 +90,19 @@ final class MapViewController: UIViewController {
             switch result {
             case .success(let points):
                 self?.dataPoints = points
-                self?.mapService.setupPoints(points: points)
             case .failure(let error):
                 self?.showAlert(title: "Ошибка", message: error.localizedDescription)
             }
         }
+    }
+    
+    @objc private func clearButtonDidTap(_ sender: UIButton) {
+        searchTextField.text = ""
+        filteredDataPoints = dataPoints
+    }
+    
+    @objc private func viewDidTap(_ sender: UITapGestureRecognizer) {
+        searchTextField.endEditing(true)
     }
     
 }
@@ -105,6 +123,18 @@ extension MapViewController: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("select item")
+        let typeOfSport = typesOfSportPoint[indexPath.row]
+        filteredDataPoints = dataPoints.filter {
+            $0.type.rawValue == typeOfSport
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        print("deselect item")
+        filteredDataPoints = dataPoints
+    }
     
 }
 
@@ -117,5 +147,24 @@ extension MapViewController: UICollectionViewDelegate {}
 extension MapViewController: MapServiceDelegate {
     func showAlertMapService(title: String, message: String) {
         showAlert(title: title, message: message)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension MapViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        if let text = textField.text, let textRange = Range(range, in: text) {
+            let updatedText = text.replacingCharacters(in: textRange, with: string)
+            if updatedText.count < 2 { filteredDataPoints = dataPoints }
+            else {
+                filteredDataPoints = dataPoints.filter {
+                    $0.name.uppercased().contains(updatedText.uppercased())
+                }
+            }
+        }
+        return true
     }
 }

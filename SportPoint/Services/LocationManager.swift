@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-protocol LocationManagerProtocol: AnyObject {
+protocol LocationManagerDelegate: AnyObject {
     func showAlert(title: String, message: String)
     func didUpdateLocations(_ locations: [CLLocation])
 }
@@ -21,11 +21,11 @@ final class LocationManager: NSObject {
     
     // MARK: -  Propertis
     
-    private var delegate: LocationManagerProtocol
+    private var delegate: LocationManagerDelegate
     
     // MARK: - Init
     
-    required init(delegate: LocationManagerProtocol) {
+    required init(delegate: LocationManagerDelegate) {
         self.delegate = delegate
         super.init()
         configureLocationManager()

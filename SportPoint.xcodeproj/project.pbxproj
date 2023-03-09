@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A0785E129B88DD9002FD05F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0785E029B88DD9002FD05F /* LocationManager.swift */; };
 		7A0785E329B88E8D002FD05F /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0785E229B88E8D002FD05F /* UIViewController+ShowAlert.swift */; };
+		7A44192929BA0005006D8743 /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44192829BA0005006D8743 /* PointAnnotation.swift */; };
 		7A44768929B873EC00209F36 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44768829B873EC00209F36 /* Coordinator.swift */; };
 		7A44768B29B8747C00209F36 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44768A29B8747C00209F36 /* MapViewController.swift */; };
 		7A44768D29B874C600209F36 /* UIViewController+GetFromStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44768C29B874C600209F36 /* UIViewController+GetFromStoryboard.swift */; };
@@ -27,11 +28,13 @@
 		7AB03E8A29B9AD4500EF8BE1 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AB03E8929B9AD4500EF8BE1 /* Data.json */; };
 		7AB03E8C29B9AE0F00EF8BE1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8B29B9AE0F00EF8BE1 /* DataService.swift */; };
 		7AB03E8E29B9B78600EF8BE1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8D29B9B78600EF8BE1 /* APIError.swift */; };
+		7AB03E9029B9DD9C00EF8BE1 /* AppleMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8F29B9DD9C00EF8BE1 /* AppleMapService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A0785E029B88DD9002FD05F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7A0785E229B88E8D002FD05F /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
+		7A44192829BA0005006D8743 /* PointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
 		7A44768829B873EC00209F36 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7A44768A29B8747C00209F36 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7A44768C29B874C600209F36 /* UIViewController+GetFromStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+GetFromStoryboard.swift"; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		7AB03E8929B9AD4500EF8BE1 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 		7AB03E8B29B9AE0F00EF8BE1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		7AB03E8D29B9B78600EF8BE1 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		7AB03E8F29B9DD9C00EF8BE1 /* AppleMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB03E8729B9A7EA00EF8BE1 /* Point.swift */,
+				7A44192829BA0005006D8743 /* PointAnnotation.swift */,
 				7AB03E8929B9AD4500EF8BE1 /* Data.json */,
 			);
 			path = Models;
@@ -130,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				7A0785E029B88DD9002FD05F /* LocationManager.swift */,
+				7AB03E8F29B9DD9C00EF8BE1 /* AppleMapService.swift */,
 				7AB03E8B29B9AE0F00EF8BE1 /* DataService.swift */,
 			);
 			path = Services;
@@ -276,9 +282,11 @@
 				7AB03E8829B9A7EA00EF8BE1 /* Point.swift in Sources */,
 				7A78251729B759C6007DCE8E /* UIView+CornerRadius.swift in Sources */,
 				7A44768929B873EC00209F36 /* Coordinator.swift in Sources */,
+				7AB03E9029B9DD9C00EF8BE1 /* AppleMapService.swift in Sources */,
 				7AAED1E329B6739F0090F534 /* AppDelegate.swift in Sources */,
 				7AAED1E529B6739F0090F534 /* SceneDelegate.swift in Sources */,
 				7AB03E8C29B9AE0F00EF8BE1 /* DataService.swift in Sources */,
+				7A44192929BA0005006D8743 /* PointAnnotation.swift in Sources */,
 				7A78251B29B75B4C007DCE8E /* UIView+AddShadow.swift in Sources */,
 				7A44768B29B8747C00209F36 /* MapViewController.swift in Sources */,
 				7A0785E129B88DD9002FD05F /* LocationManager.swift in Sources */,

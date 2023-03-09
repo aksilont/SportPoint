@@ -21,11 +21,11 @@ final class MapViewController: UIViewController {
     private let typesOfSportPoint = TypeOfSportPoint.allCases.map { $0.rawValue }
     
     private var dataPoints: [Point] = [] {
-        didSet {
-            filteredDataPoints = dataPoints
-        }
+        didSet { filteredDataPoints = dataPoints }
     }
     private var filteredDataPoints: [Point] = []
+    
+    private var mapService: AppleMapService!
     
     // MARK: - Lyfe Cycle
     
@@ -40,6 +40,8 @@ final class MapViewController: UIViewController {
     
     private func configureMap() {
         mapView.showsUserLocation = true
+        mapService = AppleMapService(mapView: mapView)
+        mapService.delegate = self
     }
     
     private func setupView() {
@@ -76,10 +78,11 @@ final class MapViewController: UIViewController {
     private func fetchData() {
         DataService.fectData { [weak self] result in
             switch result {
-            case .success(let point):
-                self?.dataPoints = point
-            case .failure(let failure):
-                self?.showAlert(title: "Ошибка", message: failure.localizedDescription)
+            case .success(let points):
+                self?.dataPoints = points
+                self?.mapService.setupPoints(points: points)
+            case .failure(let error):
+                self?.showAlert(title: "Ошибка", message: error.localizedDescription)
             }
         }
     }
@@ -108,3 +111,11 @@ extension MapViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension MapViewController: UICollectionViewDelegate {}
+
+// MARK: - MapServiceDelegate
+
+extension MapViewController: MapServiceDelegate {
+    func showAlertMapService(title: String, message: String) {
+        showAlert(title: title, message: message)
+    }
+}

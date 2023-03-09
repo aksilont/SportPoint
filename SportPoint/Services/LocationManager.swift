@@ -10,7 +10,7 @@ import CoreLocation
 
 protocol LocationManagerProtocol: AnyObject {
     func showAlert(title: String, message: String)
-    func didUpdateLocations(_ location: [CLLocation])
+    func didUpdateLocations(_ locations: [CLLocation])
 }
 
 final class LocationManager: NSObject {
@@ -21,11 +21,12 @@ final class LocationManager: NSObject {
     
     // MARK: -  Propertis
     
-    var delegate: LocationManagerProtocol?
+    private var delegate: LocationManagerProtocol
     
     // MARK: - Init
     
-    override init() {
+    required init(delegate: LocationManagerProtocol) {
+        self.delegate = delegate
         super.init()
         configureLocationManager()
     }
@@ -52,7 +53,7 @@ final class LocationManager: NSObject {
                           Нет прав на использовние Ваших координат.
                           Разрешите использовать Ваши координаты в настройках устройства
                           """
-            delegate?.showAlert(title: "Ошибка", message: message)
+            delegate.showAlert(title: "Ошибка", message: message)
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -72,7 +73,7 @@ extension LocationManager: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        delegate?.didUpdateLocations(locations)
+        delegate.didUpdateLocations(locations)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -80,7 +81,7 @@ extension LocationManager: CLLocationManagerDelegate {
                       Возникла ошибка при определении местоположения.
                       Включите службу геолокации и разрешите доступ для приложения.
                       """
-        delegate?.showAlert( title: "Ошибка", message: message)
+        delegate.showAlert( title: "Ошибка", message: message)
         print(error.localizedDescription)
     }
     

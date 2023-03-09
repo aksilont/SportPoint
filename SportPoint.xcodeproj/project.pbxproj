@@ -23,6 +23,10 @@
 		7AB03E8229B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8129B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift */; };
 		7AB03E8429B8F6BF00EF8BE1 /* TypeOfSportPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8329B8F6BF00EF8BE1 /* TypeOfSportPoint.swift */; };
 		7AB03E8629B9070B00EF8BE1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8529B9070B00EF8BE1 /* CustomTextField.swift */; };
+		7AB03E8829B9A7EA00EF8BE1 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8729B9A7EA00EF8BE1 /* Point.swift */; };
+		7AB03E8A29B9AD4500EF8BE1 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AB03E8929B9AD4500EF8BE1 /* Data.json */; };
+		7AB03E8C29B9AE0F00EF8BE1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8B29B9AE0F00EF8BE1 /* DataService.swift */; };
+		7AB03E8E29B9B78600EF8BE1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8D29B9B78600EF8BE1 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		7AB03E8129B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePointCollectionViewCell.swift; sourceTree = "<group>"; };
 		7AB03E8329B8F6BF00EF8BE1 /* TypeOfSportPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfSportPoint.swift; sourceTree = "<group>"; };
 		7AB03E8529B9070B00EF8BE1 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		7AB03E8729B9A7EA00EF8BE1 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		7AB03E8929B9AD4500EF8BE1 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
+		7AB03E8B29B9AE0F00EF8BE1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		7AB03E8D29B9B78600EF8BE1 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB03E8329B8F6BF00EF8BE1 /* TypeOfSportPoint.swift */,
+				7AB03E8D29B9B78600EF8BE1 /* APIError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -97,6 +106,8 @@
 		7AAA789529B7362000BD50E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7AB03E8729B9A7EA00EF8BE1 /* Point.swift */,
+				7AB03E8929B9AD4500EF8BE1 /* Data.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				7A0785E029B88DD9002FD05F /* LocationManager.swift */,
+				7AB03E8B29B9AE0F00EF8BE1 /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -246,6 +258,7 @@
 				7AAED1EF29B673A00090F534 /* LaunchScreen.storyboard in Resources */,
 				7AAED1EC29B673A00090F534 /* Assets.xcassets in Resources */,
 				7AAED1EA29B6739F0090F534 /* Main.storyboard in Resources */,
+				7AB03E8A29B9AD4500EF8BE1 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,13 +273,16 @@
 				7A0785E329B88E8D002FD05F /* UIViewController+ShowAlert.swift in Sources */,
 				7A44768D29B874C600209F36 /* UIViewController+GetFromStoryboard.swift in Sources */,
 				7AAED1E729B6739F0090F534 /* WelcomeViewController.swift in Sources */,
+				7AB03E8829B9A7EA00EF8BE1 /* Point.swift in Sources */,
 				7A78251729B759C6007DCE8E /* UIView+CornerRadius.swift in Sources */,
 				7A44768929B873EC00209F36 /* Coordinator.swift in Sources */,
 				7AAED1E329B6739F0090F534 /* AppDelegate.swift in Sources */,
 				7AAED1E529B6739F0090F534 /* SceneDelegate.swift in Sources */,
+				7AB03E8C29B9AE0F00EF8BE1 /* DataService.swift in Sources */,
 				7A78251B29B75B4C007DCE8E /* UIView+AddShadow.swift in Sources */,
 				7A44768B29B8747C00209F36 /* MapViewController.swift in Sources */,
 				7A0785E129B88DD9002FD05F /* LocationManager.swift in Sources */,
+				7AB03E8E29B9B78600EF8BE1 /* APIError.swift in Sources */,
 				7AB03E8429B8F6BF00EF8BE1 /* TypeOfSportPoint.swift in Sources */,
 				7AB03E8229B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift in Sources */,
 			);

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TypeOfSportPoint: String, CaseIterable {
+enum TypeOfSportPoint: String, CaseIterable, Codable {
     case football = "Футбол"
     case basketball = "Баскетбол"
     case volleyball = "Воллейбол"

@@ -13,7 +13,7 @@ protocol LocationManagerProtocol: AnyObject {
     func didUpdateLocations(_ location: [CLLocation])
 }
 
-class LocationManager: NSObject {
+final class LocationManager: NSObject {
     
     // MARK: - Private properties
     

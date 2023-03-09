@@ -20,12 +20,20 @@ final class MapViewController: UIViewController {
     
     private let typesOfSportPoint = TypeOfSportPoint.allCases.map { $0.rawValue }
     
+    private var dataPoints: [Point] = [] {
+        didSet {
+            filteredDataPoints = dataPoints
+        }
+    }
+    private var filteredDataPoints: [Point] = []
+    
     // MARK: - Lyfe Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMap()
         setupView()
+        fetchData()
     }
     
     // MARK: - Private Methods
@@ -63,6 +71,17 @@ final class MapViewController: UIViewController {
         searchTextField.addShadow(color: .black,
                                   radius: 6,
                                   offset: CGSize(width: 0, height: 3))
+    }
+    
+    private func fetchData() {
+        DataService.fectData { [weak self] result in
+            switch result {
+            case .success(let point):
+                self?.dataPoints = point
+            case .failure(let failure):
+                self?.showAlert(title: "Ошибка", message: failure.localizedDescription)
+            }
+        }
     }
     
 }

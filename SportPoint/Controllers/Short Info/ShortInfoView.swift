@@ -18,6 +18,7 @@ class ShortInfoView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var shadingView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
     @IBOutlet weak var worktimeLabel: UILabel!
@@ -53,6 +54,7 @@ class ShortInfoView: UIView {
     
     override func layoutSubviews() {
         mainImageView.corneredRadius(radius: 20)
+        shadingView.corneredRadius(radius: 20)
         routeButton.corneredRadius(radius: routeButton.bounds.height / 2)
         contentView.corneredRadius(radius: 30, corners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
     }

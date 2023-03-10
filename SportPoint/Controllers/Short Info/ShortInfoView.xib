@@ -18,6 +18,7 @@
                 <outlet property="mainImageView" destination="kRR-hY-gfs" id="aMr-BK-Kv4"/>
                 <outlet property="nameLabel" destination="trf-Nx-1tf" id="Tx1-Ei-txv"/>
                 <outlet property="routeButton" destination="sL7-YB-a5l" id="eHV-Pr-umI"/>
+                <outlet property="shadingView" destination="5cv-Uy-Xgn" id="iTr-ri-7dH"/>
                 <outlet property="walktimeLabel" destination="57d-Rj-65a" id="XVQ-c8-iEt"/>
                 <outlet property="worktimeLabel" destination="Nh8-vF-IHP" id="kAH-ys-JHm"/>
             </connections>
@@ -33,6 +34,13 @@
                         <constraint firstAttribute="height" constant="140" id="0ln-Ma-alg"/>
                     </constraints>
                 </imageView>
+                <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cv-Uy-Xgn">
+                    <rect key="frame" x="20" y="16" width="353" height="140"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="rV1-kX-lnw"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trf-Nx-1tf">
                     <rect key="frame" x="40" y="114.33333333333333" width="128.33333333333334" height="21.666666666666671"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -122,18 +130,21 @@
                 <constraint firstItem="pr1-jB-G6D" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sL7-YB-a5l" secondAttribute="bottom" constant="31" id="EVp-HJ-GVF"/>
                 <constraint firstItem="40C-8t-Zci" firstAttribute="bottom" secondItem="zz2-Pa-p7E" secondAttribute="bottom" id="HeN-pb-KFO"/>
                 <constraint firstItem="zz2-Pa-p7E" firstAttribute="leading" secondItem="pr1-jB-G6D" secondAttribute="leading" constant="35" id="KoZ-fX-Dgw"/>
+                <constraint firstItem="5cv-Uy-Xgn" firstAttribute="leading" secondItem="pr1-jB-G6D" secondAttribute="leading" constant="20" id="T7M-Bb-GLd"/>
                 <constraint firstItem="kRR-hY-gfs" firstAttribute="top" secondItem="6JJ-8b-Y3m" secondAttribute="top" constant="16" id="Xnt-TC-Or4"/>
                 <constraint firstItem="kRR-hY-gfs" firstAttribute="leading" secondItem="pr1-jB-G6D" secondAttribute="leading" constant="20" id="YXa-Pt-Zdd"/>
                 <constraint firstItem="40C-8t-Zci" firstAttribute="leading" secondItem="zz2-Pa-p7E" secondAttribute="trailing" constant="20" id="a2J-VD-w3x"/>
                 <constraint firstItem="sL7-YB-a5l" firstAttribute="top" secondItem="zz2-Pa-p7E" secondAttribute="bottom" constant="20" id="bVv-Z0-9dZ"/>
+                <constraint firstItem="pr1-jB-G6D" firstAttribute="trailing" secondItem="5cv-Uy-Xgn" secondAttribute="trailing" constant="20" id="hDI-Ap-4Bm"/>
                 <constraint firstItem="trf-Nx-1tf" firstAttribute="leading" secondItem="kRR-hY-gfs" secondAttribute="leading" constant="20" id="mTl-sh-cMD"/>
                 <constraint firstItem="zz2-Pa-p7E" firstAttribute="top" secondItem="kRR-hY-gfs" secondAttribute="bottom" constant="20" id="uwb-R7-alX"/>
+                <constraint firstItem="5cv-Uy-Xgn" firstAttribute="top" secondItem="6JJ-8b-Y3m" secondAttribute="top" constant="16" id="wi9-5L-FPZ"/>
                 <constraint firstItem="trf-Nx-1tf" firstAttribute="bottom" secondItem="kRR-hY-gfs" secondAttribute="bottom" constant="-20" id="zFp-1W-6KU"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-677" y="-570"/>
+            <point key="canvasLocation" x="-677.0992366412213" y="-570.42253521126759"/>
         </view>
     </objects>
     <resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -17,23 +17,23 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="SportPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WelcomeScreen" translatesAutoresizingMaskIntoConstraints="NO" id="bWj-4l-8m9">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WelcomeScreen" translatesAutoresizingMaskIntoConstraints="NO" id="bWj-4l-8m9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FM3-X8-35p">
-                                <rect key="frame" x="15" y="613" width="363" height="149"/>
+                                <rect key="frame" x="15" y="573" width="345" height="149"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brV-cA-DbS">
-                                        <rect key="frame" x="18.666666666666657" y="0.0" width="326" height="79"/>
+                                        <rect key="frame" x="9.6666666666666572" y="0.0" width="326" height="79"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgW-N0-eRW">
-                                        <rect key="frame" x="0.0" y="99" width="363" height="50"/>
+                                        <rect key="frame" x="0.0" y="99" width="345" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Sl9-U1-YBQ"/>
@@ -46,8 +46,8 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="dgW-N0-eRW" secondAttribute="trailing" id="Azp-mt-Ro2"/>
-                                    <constraint firstItem="dgW-N0-eRW" firstAttribute="leading" secondItem="FM3-X8-35p" secondAttribute="leading" id="vAj-y5-pp6"/>
+                                    <constraint firstAttribute="trailing" secondItem="dgW-N0-eRW" secondAttribute="trailing" id="d9p-nk-kEe"/>
+                                    <constraint firstItem="dgW-N0-eRW" firstAttribute="leading" secondItem="FM3-X8-35p" secondAttribute="leading" id="nng-IN-ucU"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -55,12 +55,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FM3-X8-35p" secondAttribute="bottom" constant="56" id="3n7-IT-z3A"/>
-                            <constraint firstItem="FM3-X8-35p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="7kK-7P-WA1"/>
+                            <constraint firstItem="FM3-X8-35p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="7kK-7P-WA1"/>
                             <constraint firstAttribute="bottom" secondItem="bWj-4l-8m9" secondAttribute="bottom" id="8dP-rp-8Hm"/>
                             <constraint firstItem="bWj-4l-8m9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8uC-44-NS0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bWj-4l-8m9" secondAttribute="trailing" id="Ccp-FY-px2"/>
+                            <constraint firstAttribute="trailing" secondItem="bWj-4l-8m9" secondAttribute="trailing" id="Ccp-FY-px2"/>
                             <constraint firstAttribute="trailing" secondItem="FM3-X8-35p" secondAttribute="trailing" constant="15" id="RgZ-LS-lXv"/>
-                            <constraint firstItem="bWj-4l-8m9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qnT-NL-rKz"/>
+                            <constraint firstItem="bWj-4l-8m9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qnT-NL-rKz"/>
                         </constraints>
                     </view>
                     <connections>
@@ -76,15 +76,15 @@
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="sed-pQ-Wdk" customClass="MapViewController" customModule="SportPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c97-2v-WHN">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcF-Hw-EMD">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Поиск" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ivt-KI-qvH" customClass="CustomTextField" customModule="SportPoint" customModuleProvider="target">
-                                <rect key="frame" x="15" y="61" width="363" height="40"/>
+                                <rect key="frame" x="15" y="61" width="345" height="40"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Yek-19-kfy"/>
@@ -93,7 +93,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tsD-eg-BXo">
-                                <rect key="frame" x="0.0" y="111" width="393" height="30"/>
+                                <rect key="frame" x="0.0" y="111" width="375" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vH4-U3-vx6"/>

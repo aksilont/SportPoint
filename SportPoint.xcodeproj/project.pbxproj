@@ -29,6 +29,8 @@
 		7AB03E8C29B9AE0F00EF8BE1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8B29B9AE0F00EF8BE1 /* DataService.swift */; };
 		7AB03E8E29B9B78600EF8BE1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8D29B9B78600EF8BE1 /* APIError.swift */; };
 		7AB03E9029B9DD9C00EF8BE1 /* AppleMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB03E8F29B9DD9C00EF8BE1 /* AppleMapService.swift */; };
+		7ADE674C29BB9DCB00730C89 /* ShortInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE674A29BB9DCB00730C89 /* ShortInfoView.swift */; };
+		7ADE674D29BB9DCB00730C89 /* ShortInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ADE674B29BB9DCB00730C89 /* ShortInfoView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		7AB03E8B29B9AE0F00EF8BE1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		7AB03E8D29B9B78600EF8BE1 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		7AB03E8F29B9DD9C00EF8BE1 /* AppleMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMapService.swift; sourceTree = "<group>"; };
+		7ADE674A29BB9DCB00730C89 /* ShortInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortInfoView.swift; sourceTree = "<group>"; };
+		7ADE674B29BB9DCB00730C89 /* ShortInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShortInfoView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +73,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A9B30A329BB253B0003C4B5 /* Detail Point */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Detail Point";
+			sourceTree = "<group>";
+		};
+		7A9B30AE29BB3F7E0003C4B5 /* Short Info */ = {
+			isa = PBXGroup;
+			children = (
+				7ADE674A29BB9DCB00730C89 /* ShortInfoView.swift */,
+				7ADE674B29BB9DCB00730C89 /* ShortInfoView.xib */,
+			);
+			path = "Short Info";
+			sourceTree = "<group>";
+		};
 		7AAA789129B735E000BD50E0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				7AAA789929B7367500BD50E0 /* !Common */,
 				7AAA789A29B7368100BD50E0 /* Init */,
 				7AAA789B29B7369500BD50E0 /* Map */,
+				7A9B30AE29BB3F7E0003C4B5 /* Short Info */,
+				7A9B30A329BB253B0003C4B5 /* Detail Point */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -261,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ADE674D29BB9DCB00730C89 /* ShortInfoView.xib in Resources */,
 				7AAED1EF29B673A00090F534 /* LaunchScreen.storyboard in Resources */,
 				7AAED1EC29B673A00090F534 /* Assets.xcassets in Resources */,
 				7AAED1EA29B6739F0090F534 /* Main.storyboard in Resources */,
@@ -292,6 +315,7 @@
 				7A0785E129B88DD9002FD05F /* LocationManager.swift in Sources */,
 				7AB03E8E29B9B78600EF8BE1 /* APIError.swift in Sources */,
 				7AB03E8429B8F6BF00EF8BE1 /* TypeOfSportPoint.swift in Sources */,
+				7ADE674C29BB9DCB00730C89 /* ShortInfoView.swift in Sources */,
 				7AB03E8229B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

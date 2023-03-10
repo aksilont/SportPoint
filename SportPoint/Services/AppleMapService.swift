@@ -11,6 +11,8 @@ import MapKit
 
 protocol MapServiceDelegate: AnyObject {
     func showAlertMapService(title: String, message: String)
+    func showCalloutView(point: Point)
+    func hideCalloudView()
 }
 
 final class AppleMapService: NSObject {
@@ -67,7 +69,9 @@ final class AppleMapService: NSObject {
     
     func setCamera(to location: CLLocationCoordinate2D) {
         let span = mapView.region.span
-        let region = MKCoordinateRegion(center: location, span: span)
+        var newLocation = location
+        newLocation.latitude -= 0.02 // поднять камеру чуть выше центра экрана
+        let region = MKCoordinateRegion(center: newLocation, span: span)
         mapView.setRegion(region, animated: true)
     }
     
@@ -128,12 +132,11 @@ extension AppleMapService: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation as? PointAnnotation else { return }
-        
         UIView.animate(withDuration: 0.3) {
             view.image = annotation.selectedImage
         }
-        
         setCamera(to: annotation.coordinate)
+        delegate?.showCalloutView(point: annotation.point)
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
@@ -141,6 +144,7 @@ extension AppleMapService: MKMapViewDelegate {
         UIView.animate(withDuration: 0.3) {
             view.image = annotation.unselectedImage
         }
+        delegate?.hideCalloudView()
     }
     
 }

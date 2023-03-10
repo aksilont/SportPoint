@@ -31,6 +31,8 @@ final class MapViewController: UIViewController {
     
     private var mapService: AppleMapService!
     
+    private lazy var calloutView: ShortInfoView = ShortInfoView()
+    
     // MARK: - Lyfe Cycle
     
     override func viewDidLoad() {
@@ -83,6 +85,9 @@ final class MapViewController: UIViewController {
         searchTextField.addShadow(color: .black,
                                   radius: 6,
                                   offset: CGSize(width: 0, height: 3))
+        
+        calloutView.delegate = self
+        view.addSubview(calloutView)
     }
     
     private func fetchData() {
@@ -148,6 +153,26 @@ extension MapViewController: MapServiceDelegate {
     func showAlertMapService(title: String, message: String) {
         showAlert(title: title, message: message)
     }
+    
+    func showCalloutView(point: Point) {
+        let inset = 15.0
+        let height = view.bounds.height / 2
+        let width = view.bounds.width - 2 * inset
+        let xPosition = inset
+        let yPosition = view.bounds.height - height
+        calloutView.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
+        calloutView.configureView(point: point)
+        calloutView.alpha = 0
+        calloutView.isHidden = false
+        UIView.animate(withDuration: 0.4) {
+            self.calloutView.alpha = 1
+        }
+    }
+    
+    func hideCalloudView() {
+        calloutView.alpha = 0
+        calloutView.isHidden = true
+    }
 }
 
 // MARK: - UITextFieldDelegate
@@ -166,5 +191,17 @@ extension MapViewController: UITextFieldDelegate {
             }
         }
         return true
+    }
+}
+
+// MARK: - ShortInfoDelegate
+
+extension MapViewController: ShortInfoDelegate {
+    func routTo(_ point: Point) {
+        print("Making route....")
+    }
+    
+    func detailInfo(_ point: Point) {
+        print("Go to detail...")
     }
 }

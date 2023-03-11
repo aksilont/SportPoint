@@ -32,6 +32,12 @@ final class MapViewController: UIViewController {
     private var mapService: AppleMapService!
     
     private lazy var calloutView: ShortInfoView = ShortInfoView()
+    private lazy var detailInfoView: DetailInfoView = DetailInfoView()
+    private lazy var shadeView: UIView = {
+        let view = UIView(frame: view.frame)
+        view.backgroundColor = .black.withAlphaComponent(0.5)
+        return view
+    }()
     
     // MARK: - Lyfe Cycle
     
@@ -88,6 +94,8 @@ final class MapViewController: UIViewController {
         
         calloutView.delegate = self
         view.addSubview(calloutView)
+        
+        detailInfoView.delegate = self
     }
     
     private func fetchData() {
@@ -202,6 +210,55 @@ extension MapViewController: ShortInfoDelegate {
     }
     
     func detailInfo(_ point: Point) {
-        print("Go to detail...")
+        calloutView.alpha = 0
+        calloutView.isHidden = true
+        
+        shadeView.alpha = 0
+        view.addSubview(shadeView)
+        
+        let inset = 15.0
+        let height = view.bounds.height * 0.8
+        let width = view.bounds.width - 2 * inset
+        let xPosition = inset
+        let yPosition = view.bounds.height - height
+        detailInfoView.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
+        detailInfoView.configureView(point: point)
+        detailInfoView.alpha = 0
+        view.addSubview(detailInfoView)
+        UIView.animate(withDuration: 0.4) {
+            self.detailInfoView.alpha = 1
+            self.shadeView.alpha = 1
+        }
     }
+}
+
+
+// MARK: - DetailInfoDelegate
+
+extension MapViewController: DetailInfoDelegate {
+    
+    func closeDetailView() {
+        UIView.animate(withDuration: 0.3) {
+            self.detailInfoView.alpha = 0
+            self.shadeView.alpha = 0
+            self.calloutView.alpha = 1
+            self.calloutView.isHidden = false
+        } completion: { result in
+            self.detailInfoView.removeFromSuperview()
+            self.shadeView.removeFromSuperview()
+        }
+        
+        view.endEditing(true)
+    }
+    
+    func openWebsite(_ url: String) {
+        if let url = URL(string: url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func order(_ point: Point) {
+        print("Opening order screen...")
+    }
+    
 }

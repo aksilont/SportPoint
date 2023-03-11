@@ -1,30 +1,33 @@
 //
-//  ShortInfoView.swift
+//  DetailInfoView.swift
 //  SportPoint
 //
-//  Created by Aksilont on 10.03.2023.
+//  Created by Aksilont on 11.03.2023.
 //
 
 import UIKit
 
-protocol ShortInfoDelegate: AnyObject {
-    func routTo(_ point: Point)
-    func detailInfo(_ point: Point)
+protocol DetailInfoDelegate: AnyObject {
+    func closeDetailView()
+    func openWebsite(_ url: String)
+    func order(_ point: Point)
 }
 
-class ShortInfoView: UIView {
-    
-    // MARK: - IBOutlets
+class DetailInfoView: UIView {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var shadingView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var adressLabel: UILabel!
-    @IBOutlet weak var worktimeLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var walktimeLabel: UILabel!
-    @IBOutlet weak var routeButton: UIButton!
-    @IBOutlet weak var detailButton: UIButton!
+    @IBOutlet weak var worktimeLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var webButton: UIButton!
+    @IBOutlet weak var orderButton: UIButton!
     
     // MARK: - Private Properties
     
@@ -32,7 +35,7 @@ class ShortInfoView: UIView {
     
     // MARK: - Public Properties
     
-    var delegate: ShortInfoDelegate?
+    var delegate: DetailInfoDelegate?
     
     // MARK: - Init
     
@@ -56,9 +59,7 @@ class ShortInfoView: UIView {
     // MARK: - Lyfe Cycle
     
     override func layoutSubviews() {
-        mainImageView.corneredRadius(radius: 20)
-        shadingView.corneredRadius(radius: 20)
-        routeButton.corneredRadius(radius: routeButton.bounds.height / 2)
+        orderButton.corneredRadius(radius: orderButton.bounds.height / 2)
         contentView.corneredRadius(radius: 30, corners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
     }
     
@@ -66,25 +67,29 @@ class ShortInfoView: UIView {
     
     func configureView(point: Point) {
         self.point = point
-        if let namedImage = point.images?.first {
-            mainImageView.image = UIImage(named: namedImage)
-        }
         nameLabel.text = point.name
         adressLabel.text = point.adress
+        descriptionTextView.text = point.description
         worktimeLabel.text = point.workTime
         walktimeLabel.text = "--- min"
+        phoneLabel.text = point.phone
+        webButton.setTitle(point.webSite, for: .normal)
     }
     
     // MARK: - IBActions
     
-    @IBAction func routeDidTap(_ sender: UIButton) {
-        guard let point else { return }
-        delegate?.routTo(point)
+    @IBAction func closeDidTap(_ sender: UIButton) {
+        delegate?.closeDetailView()
     }
-
-    @IBAction func detailDidTap(_ sender: UIButton) {
+    
+    @IBAction func webDidTap(_ sender: UIButton) {
+        guard let urlString = point?.webSite else { return }
+        delegate?.openWebsite(urlString)
+    }
+    
+    @IBAction func orderDidTap(_ sender: UIButton) {
         guard let point else { return }
-        delegate?.detailInfo(point)
+        delegate?.order(point)
     }
     
 }

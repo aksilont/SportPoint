@@ -41,7 +41,7 @@
                         <constraint firstAttribute="height" constant="140" id="rV1-kX-lnw"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trf-Nx-1tf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trf-Nx-1tf">
                     <rect key="frame" x="40" y="114.33333333333333" width="128.33333333333334" height="21.666666666666671"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,6 +138,7 @@
                 <constraint firstItem="pr1-jB-G6D" firstAttribute="trailing" secondItem="5cv-Uy-Xgn" secondAttribute="trailing" constant="20" id="hDI-Ap-4Bm"/>
                 <constraint firstItem="trf-Nx-1tf" firstAttribute="leading" secondItem="kRR-hY-gfs" secondAttribute="leading" constant="20" id="mTl-sh-cMD"/>
                 <constraint firstItem="zz2-Pa-p7E" firstAttribute="top" secondItem="kRR-hY-gfs" secondAttribute="bottom" constant="20" id="uwb-R7-alX"/>
+                <constraint firstItem="trf-Nx-1tf" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="kRR-hY-gfs" secondAttribute="trailing" constant="-20" id="veN-QV-GQz"/>
                 <constraint firstItem="5cv-Uy-Xgn" firstAttribute="top" secondItem="6JJ-8b-Y3m" secondAttribute="top" constant="16" id="wi9-5L-FPZ"/>
                 <constraint firstItem="trf-Nx-1tf" firstAttribute="bottom" secondItem="kRR-hY-gfs" secondAttribute="bottom" constant="-20" id="zFp-1W-6KU"/>
             </constraints>

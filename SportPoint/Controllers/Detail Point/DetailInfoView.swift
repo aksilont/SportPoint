@@ -13,7 +13,7 @@ protocol DetailInfoDelegate: AnyObject {
     func order(_ point: Point)
 }
 
-class DetailInfoView: UIView {
+final class DetailInfoView: UIView {
 
     // MARK: - IBOutlets
     

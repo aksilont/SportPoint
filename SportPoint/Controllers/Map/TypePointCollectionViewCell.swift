@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TypePointCollectionViewCell: UICollectionViewCell {
+final class TypePointCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var typeLabel: UILabel!
     

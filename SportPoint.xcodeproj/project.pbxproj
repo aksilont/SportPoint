@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A0785E129B88DD9002FD05F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0785E029B88DD9002FD05F /* LocationManager.swift */; };
 		7A0785E329B88E8D002FD05F /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0785E229B88E8D002FD05F /* UIViewController+ShowAlert.swift */; };
+		7A21C8AA29BDFFD600512295 /* OrderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21C8A929BDFFD600512295 /* OrderTextField.swift */; };
 		7A44192929BA0005006D8743 /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44192829BA0005006D8743 /* PointAnnotation.swift */; };
 		7A44768929B873EC00209F36 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44768829B873EC00209F36 /* Coordinator.swift */; };
 		7A44768B29B8747C00209F36 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44768A29B8747C00209F36 /* MapViewController.swift */; };
@@ -17,6 +18,7 @@
 		7A78251B29B75B4C007DCE8E /* UIView+AddShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A78251A29B75B4C007DCE8E /* UIView+AddShadow.swift */; };
 		7AA0E08D29BCF8F800515059 /* DetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E08C29BCF8F800515059 /* DetailInfoView.swift */; };
 		7AA0E08F29BCF8FE00515059 /* DetailInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA0E08E29BCF8FE00515059 /* DetailInfoView.xib */; };
+		7AA0E09229BD143500515059 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA0E09129BD143500515059 /* OrderViewController.swift */; };
 		7AAED1E329B6739F0090F534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAED1E229B6739F0090F534 /* AppDelegate.swift */; };
 		7AAED1E529B6739F0090F534 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAED1E429B6739F0090F534 /* SceneDelegate.swift */; };
 		7AAED1E729B6739F0090F534 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAED1E629B6739F0090F534 /* WelcomeViewController.swift */; };
@@ -38,6 +40,7 @@
 /* Begin PBXFileReference section */
 		7A0785E029B88DD9002FD05F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7A0785E229B88E8D002FD05F /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
+		7A21C8A929BDFFD600512295 /* OrderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTextField.swift; sourceTree = "<group>"; };
 		7A44192829BA0005006D8743 /* PointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
 		7A44768829B873EC00209F36 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7A44768A29B8747C00209F36 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		7A78251A29B75B4C007DCE8E /* UIView+AddShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddShadow.swift"; sourceTree = "<group>"; };
 		7AA0E08C29BCF8F800515059 /* DetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoView.swift; sourceTree = "<group>"; };
 		7AA0E08E29BCF8FE00515059 /* DetailInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoView.xib; sourceTree = "<group>"; };
+		7AA0E09129BD143500515059 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		7AAED1DF29B6739F0090F534 /* SportPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AAED1E229B6739F0090F534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AAED1E429B6739F0090F534 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,14 @@
 			path = "Short Info";
 			sourceTree = "<group>";
 		};
+		7AA0E09029BD141D00515059 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				7AA0E09129BD143500515059 /* OrderViewController.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		7AAA789129B735E000BD50E0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 				7AAA789B29B7369500BD50E0 /* Map */,
 				7A9B30AE29BB3F7E0003C4B5 /* Short Info */,
 				7A9B30A329BB253B0003C4B5 /* Detail Point */,
+				7AA0E09029BD141D00515059 /* Order */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -131,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB03E8529B9070B00EF8BE1 /* CustomTextField.swift */,
+				7A21C8A929BDFFD600512295 /* OrderTextField.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -321,7 +335,9 @@
 				7A44768B29B8747C00209F36 /* MapViewController.swift in Sources */,
 				7A0785E129B88DD9002FD05F /* LocationManager.swift in Sources */,
 				7AB03E8E29B9B78600EF8BE1 /* APIError.swift in Sources */,
+				7A21C8AA29BDFFD600512295 /* OrderTextField.swift in Sources */,
 				7AB03E8429B8F6BF00EF8BE1 /* TypeOfSportPoint.swift in Sources */,
+				7AA0E09229BD143500515059 /* OrderViewController.swift in Sources */,
 				7AA0E08D29BCF8F800515059 /* DetailInfoView.swift in Sources */,
 				7ADE674C29BB9DCB00730C89 /* ShortInfoView.swift in Sources */,
 				7AB03E8229B8F1EB00EF8BE1 /* TypePointCollectionViewCell.swift in Sources */,

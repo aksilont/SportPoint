@@ -258,7 +258,8 @@ extension MapViewController: DetailInfoDelegate {
     }
     
     func order(_ point: Point) {
-        print("Opening order screen...")
+        let orderVC = UIViewController.getFromStoryboard("Main", withIdentifier: "OrderViewController")
+        navigationController?.pushViewController(orderVC, animated: true)
     }
     
 }

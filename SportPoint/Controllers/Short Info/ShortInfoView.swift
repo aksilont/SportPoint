@@ -12,7 +12,7 @@ protocol ShortInfoDelegate: AnyObject {
     func detailInfo(_ point: Point)
 }
 
-class ShortInfoView: UIView {
+final class ShortInfoView: UIView {
     
     // MARK: - IBOutlets
 

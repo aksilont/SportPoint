@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomTextField: UITextField {
+final class CustomTextField: UITextField {
     
     // MARK: - Insets
     
@@ -15,7 +15,7 @@ class CustomTextField: UITextField {
         insetTextRect(forBounds: bounds)
     }
     
-    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
         insetTextRect(forBounds: bounds)
     }
     

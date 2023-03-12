@@ -39,6 +39,8 @@ final class MapViewController: UIViewController {
         return view
     }()
     
+    private var selectedCell: UICollectionViewCell?
+    
     // MARK: - Lyfe Cycle
     
     override func viewDidLoad() {
@@ -109,9 +111,27 @@ final class MapViewController: UIViewController {
         }
     }
     
+    private func clearFilter() {
+        filteredDataPoints = dataPoints
+    }
+    
+    private func setupFilter() {
+        if let selectedCell = selectedCell as? TypePointCollectionViewCell {
+            filteredDataPoints = dataPoints.filter {
+                $0.type.rawValue == selectedCell.typeLabel.text
+            }
+        } else { filteredDataPoints = dataPoints }
+        
+        if let searchText = searchTextField.text, searchText.count >= 2 {
+            filteredDataPoints = filteredDataPoints.filter {
+                $0.name.uppercased().contains(searchText.uppercased())
+            }
+        }
+    }
+    
     @objc private func clearButtonDidTap(_ sender: UIButton) {
         searchTextField.text = ""
-        filteredDataPoints = dataPoints
+        setupFilter()
     }
     
     @objc private func viewDidTap(_ sender: UITapGestureRecognizer) {
@@ -135,25 +155,30 @@ extension MapViewController: UICollectionViewDataSource {
         cell.configure(title: typesOfSportPoint[indexPath.row])
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("select item")
-        let typeOfSport = typesOfSportPoint[indexPath.row]
-        filteredDataPoints = dataPoints.filter {
-            $0.type.rawValue == typeOfSport
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        print("deselect item")
-        filteredDataPoints = dataPoints
-    }
-    
 }
 
 // MARK: - UICollectionViewDelegate
 
-extension MapViewController: UICollectionViewDelegate {}
+extension MapViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem (at: indexPath) as? TypePointCollectionViewCell
+        else { return }
+        if cell.switchActive() {
+            selectedCell = cell
+        } else {
+            selectedCell = nil
+        }
+        setupFilter()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem (at: indexPath) as? TypePointCollectionViewCell
+        else { return }
+        cell.switchOff()
+        selectedCell = nil
+        setupFilter()
+    }
+}
 
 // MARK: - MapServiceDelegate
 
@@ -191,9 +216,13 @@ extension MapViewController: UITextFieldDelegate {
                    replacementString string: String) -> Bool {
         if let text = textField.text, let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
-            if updatedText.count < 2 { filteredDataPoints = dataPoints }
-            else {
+            if let selectedCell = selectedCell as? TypePointCollectionViewCell {
                 filteredDataPoints = dataPoints.filter {
+                    $0.type.rawValue == selectedCell.typeLabel.text
+                }
+            } else { filteredDataPoints = dataPoints }
+            if updatedText.count >= 2 {
+                filteredDataPoints = filteredDataPoints.filter {
                     $0.name.uppercased().contains(updatedText.uppercased())
                 }
             }
@@ -236,7 +265,6 @@ extension MapViewController: ShortInfoDelegate {
 // MARK: - DetailInfoDelegate
 
 extension MapViewController: DetailInfoDelegate {
-    
     func closeDetailView() {
         UIView.animate(withDuration: 0.3) {
             self.detailInfoView.alpha = 0
@@ -261,5 +289,4 @@ extension MapViewController: DetailInfoDelegate {
         let orderVC = UIViewController.getFromStoryboard("Main", withIdentifier: "OrderViewController")
         navigationController?.pushViewController(orderVC, animated: true)
     }
-    
 }

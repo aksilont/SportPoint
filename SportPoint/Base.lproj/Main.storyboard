@@ -179,7 +179,7 @@
                                             <constraint firstAttribute="height" constant="50" id="bbn-NI-8jm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Телефон" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yyo-d7-2lI" customClass="OrderTextField" customModule="SportPoint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="345" height="50"/>
@@ -188,7 +188,7 @@
                                             <constraint firstAttribute="height" constant="50" id="Ebe-kH-Kn2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" textContentType="tel"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Почта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V7d-Ef-0Kc" customClass="OrderTextField" customModule="SportPoint" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="345" height="50"/>

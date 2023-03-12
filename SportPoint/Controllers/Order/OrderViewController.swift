@@ -23,18 +23,16 @@ final class OrderViewController: UIViewController {
         setupView()
     }
     
-    override func viewDidLayoutSubviews() {
+    // MARK: - UI
+    
+    private func setupView() {
         nameTextField.corneredRadius(radius: 10)
         phoneTextField.corneredRadius(radius: 10)
         emailTextField.corneredRadius(radius: 10)
         
         orderButton.corneredRadius(radius: 14)
         orderButton.addShadow(opacity: 0.13, radius: 6, offset: CGSize(width: 0, height: 3))
-    }
-    
-    // MARK: - UI
-    
-    private func setupView() {
+
         navigationController?.isNavigationBarHidden = false
         let backArrowImage = UIImage(named: "BackArrow")?.withRenderingMode(.alwaysOriginal)
         let backItem = UIBarButtonItem(image: backArrowImage,
@@ -60,8 +58,25 @@ final class OrderViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func orderDidTAP(_ sender: UIButton) {
-        showAlert(title: "Успешно",
-                  message: "Ваша заявка будет рассмотрена, мы с вами свяжемся")
+        guard Validators.isFilled(nameTextField.text,
+                                  phoneTextField.text,
+                                  emailTextField.text)
+        else {
+            showAlert(title: "Ошибка", message: "Заполните пустые поля")
+            return
+        }
+        
+        guard Validators.isSimpleEmail(emailTextField.text ?? "")
+        else {
+            showAlert(title: "Ошибка", message: "Проверьте корректность ввода почты")
+            return
+        }
+        
+        showAlert(
+            title: "Успешно",
+            message: "Ваша заявка будет рассмотрена, мы с вами свяжемся") { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }
     }
     
 }

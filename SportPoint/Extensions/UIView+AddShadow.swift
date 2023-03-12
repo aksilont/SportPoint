@@ -24,7 +24,8 @@ extension UIView {
               let currentIndex = rootView.subviews.firstIndex(of: self)
         else { return }
         
-        let backView = UIView(frame: frame)
+        let backView = UIView()
+        backView.translatesAutoresizingMaskIntoConstraints = false
         backView.backgroundColor = .white
         
         backView.layer.cornerRadius = layer.cornerRadius
@@ -37,6 +38,13 @@ extension UIView {
         backView.layer.shadowRadius = radius
         
         rootView.insertSubview(backView, at: currentIndex)
+        
+        NSLayoutConstraint.activate([
+            backView.topAnchor.constraint(equalTo: topAnchor),
+            backView.leftAnchor.constraint(equalTo: leftAnchor),
+            backView.rightAnchor.constraint(equalTo: rightAnchor),
+            backView.bottomAnchor.constraint(equalTo: bottomAnchor),
+        ])
     }
     
 }

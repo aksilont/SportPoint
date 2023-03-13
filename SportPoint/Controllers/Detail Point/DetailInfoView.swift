@@ -31,7 +31,11 @@ final class DetailInfoView: UIView {
     
     // MARK: - Private Properties
     
-    private var point: Point?
+    private var point: Point? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     // MARK: - Public Properties
     
@@ -54,6 +58,11 @@ final class DetailInfoView: UIView {
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(contentView)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(DetailInfoCollectionViewCell.self,
+                                forCellWithReuseIdentifier: String(describing: DetailInfoCollectionViewCell.self))
     }
     
     // MARK: - Lyfe Cycle
@@ -92,4 +101,40 @@ final class DetailInfoView: UIView {
         delegate?.order(point)
     }
     
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension DetailInfoView: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        point?.images?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: String(describing: DetailInfoCollectionViewCell.self),
+            for: indexPath) as? DetailInfoCollectionViewCell
+        else { return UICollectionViewCell() }
+        if let point,
+           let images = point.images {
+            cell.configure(imageString: images[indexPath.row])
+        }
+        return cell
+    }
+    
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension DetailInfoView: UICollectionViewDelegate {
+    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension DetailInfoView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 170, height: 170)
+    }
 }

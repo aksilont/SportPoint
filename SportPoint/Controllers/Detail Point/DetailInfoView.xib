@@ -42,7 +42,7 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PointAdress" translatesAutoresizingMaskIntoConstraints="NO" id="SDQ-A2-CkO">
                             <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWr-rY-zn3">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adress" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWr-rY-zn3">
                             <rect key="frame" x="23" y="0.0" width="39" height="15"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
@@ -50,17 +50,17 @@
                         </label>
                     </subviews>
                 </stackView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-BF-xYX">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-BF-xYX">
                     <rect key="frame" x="0.0" y="85" width="393" height="170"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="170" id="dUK-ej-tfr"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K1R-G6-zgS">
-                        <size key="itemSize" width="128" height="128"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YpZ-7a-uXY">
+                        <size key="itemSize" width="170" height="170"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zvf-dX-wO3">
@@ -206,6 +206,7 @@
                 <constraint firstItem="bCg-BF-xYX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kyd-zX-eFt"/>
                 <constraint firstItem="sDW-l7-SBo" firstAttribute="top" secondItem="KFw-yW-I5f" secondAttribute="bottom" constant="25" id="o6U-1G-jbP"/>
                 <constraint firstItem="sDW-l7-SBo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="phV-x2-Va7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="12k-mn-Xp4" secondAttribute="trailing" constant="20" id="qZz-Nd-Aj8"/>
                 <constraint firstItem="bCg-BF-xYX" firstAttribute="top" secondItem="12k-mn-Xp4" secondAttribute="bottom" constant="21" id="xn9-Bo-cHJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KFw-yW-I5f" secondAttribute="trailing" constant="20" id="xv5-n3-hxf"/>
             </constraints>
@@ -223,10 +224,10 @@
         <image name="PointWeb" width="15" height="15.333333015441895"/>
         <image name="PointWorktime" width="15" height="15"/>
         <namedColor name="InactivePageControl">
-            <color red="0.29411764705882354" green="0.65098039215686276" blue="0.93333333333333335" alpha="0.09999996960163117" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.29399999976158142" green="0.65100002288818359" blue="0.93300002813339233" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TitleOnWhiteButton">
-            <color red="0.29411764705882354" green="0.65098039215686276" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.29399999976158142" green="0.65100002288818359" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

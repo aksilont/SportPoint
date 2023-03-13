@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A02A61829BF0BEA006F59C8 /* DetailInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02A61729BF0BEA006F59C8 /* DetailInfoCollectionViewCell.swift */; };
 		7A0785E129B88DD9002FD05F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0785E029B88DD9002FD05F /* LocationManager.swift */; };
 		7A0785E329B88E8D002FD05F /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0785E229B88E8D002FD05F /* UIViewController+ShowAlert.swift */; };
 		7A21C8AA29BDFFD600512295 /* OrderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21C8A929BDFFD600512295 /* OrderTextField.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A02A61729BF0BEA006F59C8 /* DetailInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		7A0785E029B88DD9002FD05F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7A0785E229B88E8D002FD05F /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		7A21C8A929BDFFD600512295 /* OrderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTextField.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				7AA0E08C29BCF8F800515059 /* DetailInfoView.swift */,
 				7AA0E08E29BCF8FE00515059 /* DetailInfoView.xib */,
+				7A02A61729BF0BEA006F59C8 /* DetailInfoCollectionViewCell.swift */,
 			);
 			path = "Detail Point";
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				7A78251B29B75B4C007DCE8E /* UIView+AddShadow.swift in Sources */,
 				7A44768B29B8747C00209F36 /* MapViewController.swift in Sources */,
 				7A0785E129B88DD9002FD05F /* LocationManager.swift in Sources */,
+				7A02A61829BF0BEA006F59C8 /* DetailInfoCollectionViewCell.swift in Sources */,
 				7AB03E8E29B9B78600EF8BE1 /* APIError.swift in Sources */,
 				7A21C8AA29BDFFD600512295 /* OrderTextField.swift in Sources */,
 				7AB03E8429B8F6BF00EF8BE1 /* TypeOfSportPoint.swift in Sources */,
